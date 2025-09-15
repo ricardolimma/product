@@ -1,0 +1,181 @@
+openapi: 3.0.3
+info:
+  title: Product API
+  version: 1.0.3
+  description: API que retorna dados de um produto.
+
+servers:
+  - url: http://localhost:8080
+
+tags:
+  - name: Products
+    description: Endpoints relacionados a produtos
+
+paths:
+  /api/products/{id}:
+    get:
+      tags:
+        - Products
+      summary: Obtém os detalhes de um produto por ID
+      operationId: getProductById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Identificador do produto (ex. "MLB-5268050332")
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Detalhes do produto
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '404':
+          description: Produto não encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: string
+          example: MLB-5268050332
+        title:
+          type: string
+          example: Copo Térmico Gigante 12L Inox com Tampa e Inox Canudo
+        price:
+          $ref: '#/components/schemas/Price'
+        images:
+          type: array
+          items:
+            type: string
+            format: uri
+        description:
+          type: string
+        attributes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Attribute'
+        category:
+          $ref: '#/components/schemas/Category'
+        seller:
+          $ref: '#/components/schemas/Seller'
+        stock:
+          $ref: '#/components/schemas/Stock'
+        shipping:
+          $ref: '#/components/schemas/Shipping'
+        reviews:
+          $ref: '#/components/schemas/Reviews'
+
+    Price:
+      type: object
+      properties:
+        currency:
+          type: string
+          example: BRL
+        amount:
+          type: number
+          format: double
+          example: 199.9
+        originalAmount:
+          type: number
+          format: double
+          nullable: true
+        discountPercentage:
+          type: number
+          format: double
+          nullable: true
+
+    Attribute:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
+
+    Category:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+
+    Seller:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        reputation:
+          $ref: '#/components/schemas/Reputation'
+
+    Reputation:
+      type: object
+      properties:
+        level:
+          type: string
+        score:
+          type: number
+          format: double
+
+    Stock:
+      type: object
+      properties:
+        available:
+          type: boolean
+        quantity:
+          type: integer
+          format: int32
+          nullable: true
+
+    Money:
+      type: object
+      properties:
+        currency:
+          type: string
+        amount:
+          type: number
+          format: double
+
+    Shipping:
+      type: object
+      properties:
+        free:
+          type: boolean
+        cost:
+          allOf:
+            - $ref: '#/components/schemas/Money'
+          nullable: true
+        estimatedDelivery:
+          type: string
+          nullable: true
+
+    Reviews:
+      type: object
+      properties:
+        rating:
+          type: number
+          format: double
+        totalReviews:
+          type: integer
+          format: int32
+
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+          example: NOT_FOUND
+        message:
+          type: string
+          example: Produto não encontrado
