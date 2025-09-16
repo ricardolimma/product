@@ -121,6 +121,7 @@ Principais endpoints definidos:
 
 Schemas incluem `Product`, `ProductPage`, `Price`, etc., e o schema `Error` com `code`, `message`, `timestamp`.
 
+Para visualizar o Swagger da API acesse o site https://editor.swagger.io/ e cole o conteúdo do arquivo `src/main/resources/openapi.yaml`.
 ---
 
 
