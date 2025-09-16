@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductEntity {
-    private String id;
+    private String productId;
 
     private String title;
 

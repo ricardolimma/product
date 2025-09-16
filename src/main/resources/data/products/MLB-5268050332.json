@@ -1,0 +1,34 @@
+{
+  "productId": "MLB-5268050332",
+  "title": "Copo Térmico Gigante 12L Inox com Tampa e Canudo Inox",
+  "price": {
+    "currency": "BRL",
+    "amount": 199.9,
+    "originalAmount": 249.9,
+    "discountPercentage": 20
+  },
+  "images": [
+    "https://example.com/images/copo-termico-12l-1.jpg",
+    "https://example.com/images/copo-termico-12l-2.jpg"
+  ],
+  "description": "Copo térmico de aço inoxidável (12L) para manter bebidas frias por mais tempo. Inclui tampa e canudo inox.",
+  "attributes": [
+    { "name": "Capacidade", "value": "12 L" },
+    { "name": "Material", "value": "Aço inox" },
+    { "name": "Cor", "value": "Prata" },
+    { "name": "Peso", "value": "1.2 kg" }
+  ],
+  "category": { "id": "MLB12345", "name": "Cozinha e Utensílios" },
+  "seller": {
+    "id": "123456789",
+    "name": "Vendedor Exemplar",
+    "reputation": { "level": "Platinum", "score": 99.8 }
+  },
+  "stock": { "available": true, "quantity": 15 },
+  "shipping": {
+    "free": false,
+    "cost": { "currency": "BRL", "amount": 25.0 },
+    "estimatedDelivery": "3-5 dias úteis"
+  },
+  "reviews": { "rating": 4.8, "totalReviews": 250 }
+}

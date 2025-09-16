@@ -1,0 +1,34 @@
+{
+  "productId": "MLB-0002",
+  "title": "Jogo de Facas 6 Peças com Suporte Acrílico",
+  "price": {
+    "currency": "BRL",
+    "amount": 159.9,
+    "originalAmount": 199.9,
+    "discountPercentage": 20
+  },
+  "images": [
+    "https://example.com/images/jogo-facas-6p-1.jpg",
+    "https://example.com/images/jogo-facas-6p-2.jpg"
+  ],
+  "description": "Conjunto com 6 facas em aço inox e suporte acrílico. Ideal para uso diário na cozinha.",
+  "attributes": [
+    { "name": "Material", "value": "Aço inox" },
+    { "name": "Quantidade de Peças", "value": "6" },
+    { "name": "Suporte", "value": "Acrílico" },
+    { "name": "Cor", "value": "Inox/Transparente" }
+  ],
+  "category": { "id": "MLB12345", "name": "Cozinha e Utensílios" },
+  "seller": {
+    "id": "555666777",
+    "name": "Cozinha Premium",
+    "reputation": { "level": "Silver", "score": 92.1 }
+  },
+  "stock": { "available": true, "quantity": 58 },
+  "shipping": {
+    "free": false,
+    "cost": { "currency": "BRL", "amount": 19.9 },
+    "estimatedDelivery": "4-6 dias úteis"
+  },
+  "reviews": { "rating": 4.5, "totalReviews": 430 }
+}

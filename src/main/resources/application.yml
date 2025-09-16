@@ -1,1 +1,38 @@
+# ==== App ====
+spring:
+  application:
+    name: product
+  jackson:
+    # não serializa null e ignora campos desconhecidos ao desserializar
+    default-property-inclusion: non_null
+    deserialization:
+      fail-on-unknown-properties: false
+  mvc:
+    problemdetails:
+      enabled: true
+    # CORS simples para um front local
+    cors:
+      mappings:
+        "[/api/**]":
+          allowed-origins: "http://localhost:3000"
+          allowed-methods: GET,OPTIONS
+          allowed-headers: "*"
 
+server:
+  port: 8080
+  servlet:
+    context-path: /product/v1
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    com.product.contract: DEBUG     # pacotes gerados pelo OpenAPI
+    com.pruduct: DEBUG              # seus pacotes da aplicação
+
+# ==== Armazenamento somente leitura (JSON dentro do JAR) ====
+# - per-file: 1 arquivo por produto em src/main/resources/data/products/*.json
+app:
+  storage:
+    layout: per-file        # per-file
+    single-file-name: products.json

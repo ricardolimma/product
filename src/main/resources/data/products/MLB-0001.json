@@ -1,0 +1,34 @@
+{
+  "productId": "MLB-0001",
+  "title": "Liquidificador Turbo 900W 110V Copo 2L",
+  "price": {
+    "currency": "BRL",
+    "amount": 279.9,
+    "originalAmount": 329.9,
+    "discountPercentage": 15.2
+  },
+  "images": [
+    "https://example.com/images/liquidificador-900w-1.jpg",
+    "https://example.com/images/liquidificador-900w-2.jpg"
+  ],
+  "description": "Liquidificador 900W com copo de 2 litros, 12 velocidades e função pulsar. Lâminas em aço inox.",
+  "attributes": [
+    { "name": "Voltagem", "value": "110 V" },
+    { "name": "Potência", "value": "900 W" },
+    { "name": "Capacidade", "value": "2 L" },
+    { "name": "Cor", "value": "Preto" }
+  ],
+  "category": { "id": "MLB12345", "name": "Cozinha e Utensílios" },
+  "seller": {
+    "id": "987654321",
+    "name": "Loja Turbo",
+    "reputation": { "level": "Gold", "score": 96.4 }
+  },
+  "stock": { "available": true, "quantity": 32 },
+  "shipping": {
+    "free": true,
+    "cost": { "currency": "BRL", "amount": 0.0 },
+    "estimatedDelivery": "2-4 dias úteis"
+  },
+  "reviews": { "rating": 4.6, "totalReviews": 1240 }
+}
